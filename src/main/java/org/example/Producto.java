@@ -1,5 +1,5 @@
 package org.example;
 
-public class Producto {
+public abstract class Producto {
 
 }
