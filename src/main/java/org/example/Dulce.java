@@ -9,5 +9,4 @@ abstract public class Dulce extends Producto {
     public int getSerie(){
         return this.serie;
     }
-    }
 }
