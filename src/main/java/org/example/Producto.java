@@ -1,8 +1,13 @@
 package org.example;
 
 public abstract class Producto {
-    Productos opcion;
-    public Producto(Productos producto) {
-        this.opcion = producto;
+    public Producto() {
+        Producto producto = null;
+    }
+    public Producto entregarProducto(int opcion){
+        switch(opcion){
+            case 1:
+                producto = new Bebida(Productos.COCA);
+        }
     }
 }

@@ -3,34 +3,63 @@ package org.example;
 public class Expendedor {
     private Deposito<Bebida> coca;
     private Deposito<Bebida> sprite;
+    private Deposito<Bebida> fanta;
     private Deposito<Moneda> monVu;
-    private Deposito<Dulce> dulce;
-    private int precioBebida, precioDulces;
+    private Deposito<Dulce> snickers;
+    private Deposito<Dulce> super8;
+    private int precio;
     private int numBebidas;
     private int numDulces;
 
-    public Expendedor(int numProductos, int precioBebida, int precioDulces) {
-        this.precioBebida = precioBebida;
-        this.precioDulces = precioDulces;
+    public Expendedor(int numProductos, int precio) {
+        this.precio = precio;
         numBebidas = numProductos;
         numDulces = numProductos;
         coca = new Deposito<>();
         sprite = new Deposito<>();
+        fanta = new Deposito<>();
         monVu = new Deposito<>();
-        dulce = new Deposito<>();
+        snickers = new Deposito<>();
+        super8 = new Deposito<>();
         for(int i=0; i<numProductos; i++){
+            Bebida a =new Fanta(i);
+            fanta.addCosas(a);
             Bebida b = new CocaCola(i);
             coca.addCosas(b);
             Bebida c = new Sprite(i);
             sprite.addCosas(c);
-            Dulce d = new Super8(i);
-            dulce.addCosas(d);
+            Dulce d = new Snickers(i);
+            super8.addCosas(d);
+            Dulce e = new Super8(i);
+            snickers.addCosas(e);
 
         }
     }
 
-    public Producto comprarProducto(Moneda m, int cual){
-
+    public Producto comprarProducto(Moneda m,int queProducto){
+        if(m == null){
+            throw new PagoIncorrectoException("Error. Pago inválido");
+        }
+        else if(m.getValor() < precio){
+            throw new PagoInsuficienteException("Error. Pago insuficiente");
+        }
+        else if (queProducto == Productos.COCA.getOpcion() && (coca.sizeCosas() > 0)) {
+            for (int i = 0; i < m.getValor() - precio; i += 100) {
+                Moneda a = new Moneda100();
+                monVu.addCosas(a);
+            }
+            return coca.getCosas();
+        }
+        else if (queProducto == Productos.SPRITE.getOpcion() && (coca.sizeCosas() > 0)) {
+            for (int i = 0; i < m.getValor() - precio; i += 100) {
+                Moneda a = new Moneda100();
+                monVu.addCosas(a);
+            }
+            return coca.getCosas();
+        }
+        else {
+            throw new NoHayProductoException("Error. Producto no disponible");
+        }
     }
 
    /* public Bebida comprarBebida(Moneda m, int cual) {
