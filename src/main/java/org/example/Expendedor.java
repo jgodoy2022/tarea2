@@ -1,33 +1,36 @@
 package org.example;
 
 public class Expendedor {
-    public static final int COCA = 1;
-    public static final int SPRITE = 2;
-    public static final int m=0;
     private Deposito<Bebida> coca;
     private Deposito<Bebida> sprite;
     private Deposito<Moneda> monVu;
     private Deposito<Dulce> dulce;
     private int precioBebida, precioDulces;
-    private int numcoca;
-    private int numsprite;
+    private int numBebidas;
+    private int numDulces;
 
     public Expendedor(int numProductos, int precioBebida, int precioDulces) {
         this.precioBebida = precioBebida;
         this.precioDulces = precioDulces;
-        numcoca = numProductos;
-        numsprite = numProductos;
+        numBebidas = numProductos;
+        numDulces = numProductos;
         coca = new Deposito<>();
         sprite = new Deposito<>();
         monVu = new Deposito<>();
         dulce = new Deposito<>();
-        /*for (int i = 0; i < numProductos; i++) {
+        for(int i=0; i<numProductos; i++){
             Bebida b = new CocaCola(i);
             coca.addCosas(b);
             Bebida c = new Sprite(i);
             sprite.addCosas(c);
+            Dulce d = new Super8(i);
+            dulce.addCosas(d);
 
-        }*/
+        }
+    }
+
+    public Producto comprarProducto(Moneda m, int cual){
+
     }
 
    /* public Bebida comprarBebida(Moneda m, int cual) {
