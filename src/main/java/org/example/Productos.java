@@ -1,15 +1,13 @@
 package org.example;
 
 public enum Productos {
-    COCA(1),
-    SPRITE(2),
-    DULCE(3);
+    COCA, SPRITE, FANTA, SNICKERS, SUPER8
 
-    private final int opcion;
+    /*private final int opcion;
     Productos(int opcion) {
         this.opcion=opcion;
     }
     public int getOpcion(){
         return opcion;
-    }
+    }*/
 }
