@@ -8,26 +8,29 @@ public class Expendedor {
     private Deposito<Bebida> sprite;
     private Deposito<Moneda> monVu;
     private Deposito<Dulce> dulce;
-    private int precio;
+    private int precioBebida, precioDulces;
     private int numcoca;
     private int numsprite;
 
-    public Expendedor(int numProductos, int precioProductos) {
-        this.precio = precioProductos;
+    public Expendedor(int numProductos, int precioBebida, int precioDulces) {
+        this.precioBebida = precioBebida;
+        this.precioDulces = precioDulces;
         numcoca = numProductos;
         numsprite = numProductos;
         coca = new Deposito<>();
         sprite = new Deposito<>();
         monVu = new Deposito<>();
-        for (int i = 0; i < numProductos; i++) {
+        dulce = new Deposito<>();
+        /*for (int i = 0; i < numProductos; i++) {
             Bebida b = new CocaCola(i);
             coca.addCosas(b);
             Bebida c = new Sprite(i);
             sprite.addCosas(c);
-        }
+
+        }*/
     }
 
-    public Bebida comprarBebida(Moneda m, int cual) {
+   /* public Bebida comprarBebida(Moneda m, int cual) {
         if (m == null) {
             return null;
         } else if (m.getValor() < precio) {
@@ -57,7 +60,7 @@ public class Expendedor {
             }
             return null;
         }
-    }
+    }*/
     public Moneda getVuelto() {
         return monVu.getCosas();
     }
