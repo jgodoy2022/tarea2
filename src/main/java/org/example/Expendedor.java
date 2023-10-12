@@ -4,23 +4,26 @@ public class Expendedor {
     public static final int COCA = 1;
     public static final int SPRITE = 2;
     public static final int m=0;
-    private Deposito coca, sprite, monVu;
+    private Deposito<Bebida> coca;
+    private Deposito<Bebida> sprite;
+    private Deposito<Moneda> monVu;
+    private Deposito<Dulce> dulce;
     private int precio;
     private int numcoca;
     private int numsprite;
 
-    public Expendedor(int numBebidas, int precioBebidas) {
-        this.precio = precioBebidas;
-        numcoca = numBebidas;
-        numsprite = numBebidas;
-        coca = new Deposito();
-        sprite = new Deposito();
-        monVu = new Deposito();
-        for (int i = 0; i < numBebidas; i++) {
+    public Expendedor(int numProductos, int precioProductos) {
+        this.precio = precioProductos;
+        numcoca = numProductos;
+        numsprite = numProductos;
+        coca = new Deposito<>();
+        sprite = new Deposito<>();
+        monVu = new Deposito<>();
+        for (int i = 0; i < numProductos; i++) {
             Bebida b = new CocaCola(i);
-            coca.addBebida(b);
+            coca.addCosas(b);
             Bebida c = new Sprite(i);
-            sprite.addBebida(c);
+            sprite.addCosas(c);
         }
     }
 
@@ -30,33 +33,33 @@ public class Expendedor {
         } else if (m.getValor() < precio) {
             for (int i = 0; i < m.getValor(); i += 100) {
                 Moneda a = new Moneda100();
-                monVu.addMoneda(a);
+                monVu.addCosas(a);
             }
             return null;
         } else if (cual == COCA && numcoca > 0) {
             numcoca -= 1;
             for (int i = 0; i < m.getValor() - precio; i += 100) {
                 Moneda a = new Moneda100();
-                monVu.addMoneda(a);
+                monVu.addCosas(a);
             }
-            return coca.getBebida();
+            return coca.getCosas();
         } else if (cual == SPRITE && numsprite > 0) {
             numsprite -= 1;
             for (int i = 0; i < m.getValor() - precio; i += 100) {
                 Moneda a = new Moneda100();
-                monVu.addMoneda(a);
+                monVu.getCosas();
             }
-            return sprite.getBebida();
+            return sprite.getCosas();
         } else {
             for (int i = 0; i < m.getValor(); i += 100) {
                 Moneda a = new Moneda100();
-                monVu.addMoneda(a);
+                monVu.getCosas();
             }
             return null;
         }
     }
     public Moneda getVuelto() {
-        return monVu.getMoneda();
+        return monVu.getCosas();
     }
 
 }
