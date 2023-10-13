@@ -39,11 +39,12 @@ public class Expendedor {
         }
     }
 
-    public Producto comprarProducto(Moneda m,int queProducto){
+    public Producto comprarProducto(Moneda m,int queProducto) throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
         if(m == null){
             throw new PagoIncorrectoException("Error. Pago inválido");
-        }
-        else if(m.getValor() < precio){
+        } else if (queProducto!=TipoProducto.COCA.getOpcion() && queProducto!=TipoProducto.SNICKERS.getOpcion() && queProducto!=TipoProducto.SUPER8.getOpcion() && queProducto!=TipoProducto.FANTA.getOpcion() && queProducto!=TipoProducto.SPRITE.getOpcion()){
+            throw new NoHayProductoException("Error. Producto no disponible");
+        } else if(m.getValor() < precio){
             throw new PagoInsuficienteException("Error. Pago insuficiente");
         }
         else if(queProducto == TipoProducto.COCA.getOpcion() && (coca.sizeCosas() > 0)){

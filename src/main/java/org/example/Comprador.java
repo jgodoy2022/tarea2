@@ -4,7 +4,7 @@ public class Comprador {
     private String sonido;
     private int vuelto;
 
-    public Comprador(Moneda m, int cualProducto, Expendedor exp) {
+    public Comprador(Moneda m, int cualProducto, Expendedor exp) throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
         Producto b = exp.comprarProducto(m, cualProducto);
         if(cualProducto == TipoProducto.COCA.getOpcion() || cualProducto == TipoProducto.SPRITE.getOpcion()
                 || cualProducto == TipoProducto.FANTA.getOpcion() || cualProducto == TipoProducto.SNICKERS.getOpcion()
@@ -18,17 +18,13 @@ public class Comprador {
                 vuelto = aux;
             }
             else if(b == null && m != null){
+                vuelto = aux;
                 throw new NoHayProductoException("Error. Producto no disponible");
-                vuelto = aux;
             }
-            /*else if(b != null && m != null){
-                throw new PagoIncorrectoException("Error. Pago inválido");
-                vuelto = aux;
-            }*/
         }
         else{
-            throw new NoHayProductoException("Error. Producto no disponible");
             vuelto = m.getValor();
+            throw new NoHayProductoException("Error. Producto no disponible");
         }
     }
     public int cuantoVuelto(){

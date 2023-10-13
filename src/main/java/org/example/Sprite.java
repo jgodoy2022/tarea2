@@ -1,5 +1,5 @@
 package org.example;
-class Sprite extends Bebida{
+public class Sprite extends Bebida{
     public Sprite(int c){
         super(c);
     }
