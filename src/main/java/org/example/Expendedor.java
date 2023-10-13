@@ -46,31 +46,31 @@ public class Expendedor {
         else if(m.getValor() < precio){
             throw new PagoInsuficienteException("Error. Pago insuficiente");
         }
-        else if(queProducto == Productos.COCA.getOpcion() && (coca.sizeCosas() > 0)){
+        else if(queProducto == TipoProducto.COCA.getOpcion() && (coca.sizeCosas() > 0)){
             for (int i = 0; i < m.getValor() - precio; i += 100) {
                 AgregaMoneda();
             }
             return coca.getCosas();
         }
-        else if (queProducto == Productos.SPRITE.getOpcion() && (sprite.sizeCosas() > 0)) {
+        else if (queProducto == TipoProducto.SPRITE.getOpcion() && (sprite.sizeCosas() > 0)) {
             for (int i = 0; i < m.getValor() - precio; i += 100) {
                 AgregaMoneda();
             }
             return sprite.getCosas();
         }
-        else if (queProducto == Productos.FANTA.getOpcion() && (fanta.sizeCosas() > 0)) {
+        else if (queProducto == TipoProducto.FANTA.getOpcion() && (fanta.sizeCosas() > 0)) {
             for (int i = 0; i < m.getValor() - precio; i += 100) {
                 AgregaMoneda();
             }
             return fanta.getCosas();
         }
-        else if (queProducto == Productos.SNICKERS.getOpcion() && (snickers.sizeCosas() > 0)) {
+        else if (queProducto == TipoProducto.SNICKERS.getOpcion() && (snickers.sizeCosas() > 0)) {
             for (int i = 0; i < m.getValor() - precio; i += 100) {
                 AgregaMoneda();
             }
             return snickers.getCosas();
         }
-        else if (queProducto == Productos.SUPER8.getOpcion() && (super8.sizeCosas() > 0)) {
+        else if (queProducto == TipoProducto.SUPER8.getOpcion() && (super8.sizeCosas() > 0)) {
             for (int i = 0; i < m.getValor() - precio; i += 100) {
                 AgregaMoneda();
             }

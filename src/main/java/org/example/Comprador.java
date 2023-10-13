@@ -5,38 +5,31 @@ public class Comprador {
     private int vuelto;
 
     public Comprador(Moneda m, int cualProducto, Expendedor exp) {
-        //Bebida b = exp.comprarBebida(m,cualBebida);
         Producto b = exp.comprarProducto(m, cualProducto);
-        int aux = 0;
-        while(exp.getVuelto() != null){
-            aux += 100;
-        }
-        if(b != null){
-            sonido = b.sabor();
-            vuelto = aux;
-        }
-        /*if(cualBebida == 1 || cualBebida == 2){
+        if(cualProducto == TipoProducto.COCA.getOpcion() || cualProducto == TipoProducto.SPRITE.getOpcion()
+                || cualProducto == TipoProducto.FANTA.getOpcion() || cualProducto == TipoProducto.SNICKERS.getOpcion()
+                || cualProducto == TipoProducto.SUPER8.getOpcion()){
             int aux = 0;
             while(exp.getVuelto() != null){
                 aux += 100;
             }
             if(b != null){
-                sonido = b.beber();
+                sonido = b.sabor();
                 vuelto = aux;
             }
             else if(b == null && m != null){
-                sonido = null;
+                throw new NoHayProductoException("Error. Producto no disponible");
                 vuelto = aux;
             }
-            else if(b != null && m != null){
-                sonido = null;
+            /*else if(b != null && m != null){
+                throw new PagoIncorrectoException("Error. Pago inválido");
                 vuelto = aux;
-            }
+            }*/
         }
-        else if(cualBebida != 1 && cualBebida != 2){
-            sonido = null;
+        else{
+            throw new NoHayProductoException("Error. Producto no disponible");
             vuelto = m.getValor();
-        }*/
+        }
     }
     public int cuantoVuelto(){
         return vuelto;
