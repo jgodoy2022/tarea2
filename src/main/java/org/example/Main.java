@@ -16,53 +16,53 @@ public class Main {
         System.out.println(c.queBebiste()+", "+c.cuantoVuelto());
 
         m = null;
-        c = new Comprador(m,Expendedor.SPRITE,exp);
+        c = new Comprador(m,Productos.SPRITE.getOpcion(), exp);
         System.out.println(c.queBebiste()+", "+c.cuantoVuelto());
         m = null;
-        c = new Comprador(m,Expendedor.SPRITE,exp);
+        c = new Comprador(m,Productos.SPRITE.getOpcion(), exp);
         System.out.println(c.queBebiste()+", "+c.cuantoVuelto());
         m = null;
-        c = new Comprador(m,Expendedor.SPRITE,exp);
+        c = new Comprador(m,Productos.SPRITE.getOpcion(), exp);
         System.out.println(c.queBebiste()+", "+c.cuantoVuelto());
 
         m = new Moneda1000();
-        c = new Comprador(m,Expendedor.COCA,exp);
+        c = new Comprador(m,Productos.COCA.getOpcion(), exp);
         System.out.println(c.queBebiste()+", "+c.cuantoVuelto());
         m = new Moneda1000();
-        c = new Comprador(m,Expendedor.COCA,exp);
+        c = new Comprador(m,Productos.COCA.getOpcion(), exp);
         System.out.println(c.queBebiste()+", "+c.cuantoVuelto());
         m = new Moneda1000();
-        c = new Comprador(m,Expendedor.COCA,exp);
+        c = new Comprador(m,Productos.COCA.getOpcion(),exp);
         System.out.println(c.queBebiste()+", "+c.cuantoVuelto());
 
         m = new Moneda500();
-        c = new Comprador(m,Expendedor.SPRITE,exp);
+        c = new Comprador(m,Productos.SPRITE.getOpcion(), exp);
         System.out.println(c.queBebiste()+", "+c.cuantoVuelto());
         m = new Moneda500();
-        c = new Comprador(m,Expendedor.SPRITE,exp);
+        c = new Comprador(m,Productos.SPRITE.getOpcion(),exp);
         System.out.println(c.queBebiste()+", "+c.cuantoVuelto());
         m = new Moneda500();
-        c = new Comprador(m,Expendedor.SPRITE,exp);
+        c = new Comprador(m,Productos.SPRITE.getOpcion(),exp);
         System.out.println(c.queBebiste()+", "+c.cuantoVuelto());
 
         m = new Moneda1500();
-        c = new Comprador(m,Expendedor.SPRITE,exp);
+        c = new Comprador(m,Productos.SPRITE.getOpcion(),exp);
         System.out.println(c.queBebiste()+", "+c.cuantoVuelto());
         m = new Moneda1500();
-        c = new Comprador(m,Expendedor.SPRITE,exp);
+        c = new Comprador(m,Productos.SPRITE.getOpcion(),exp);
         System.out.println(c.queBebiste()+", "+c.cuantoVuelto());
         m = new Moneda1500();
-        c = new Comprador(m,Expendedor.SPRITE,exp);
+        c = new Comprador(m,Productos.SPRITE.getOpcion(),exp);
         System.out.println(c.queBebiste()+", "+c.cuantoVuelto());
 
         m = new Moneda1500();
-        c = new Comprador(m,Expendedor.SPRITE,exp);
+        c = new Comprador(m,Productos.SPRITE.getOpcion(),exp);
         System.out.println(c.queBebiste()+", "+c.cuantoVuelto());
         m = new Moneda1500();
-        c = new Comprador(m,Expendedor.SPRITE,exp);
+        c = new Comprador(m,Productos.SPRITE.getOpcion(),exp);
         System.out.println(c.queBebiste()+", "+c.cuantoVuelto());
         m = new Moneda1500();
-        c = new Comprador(m,Expendedor.SPRITE,exp);
+        c = new Comprador(m,Productos.SPRITE.getOpcion(),exp);
         System.out.println(c.queBebiste()+", "+c.cuantoVuelto());
     }
 }

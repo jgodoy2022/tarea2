@@ -18,8 +18,6 @@ public class Expendedor {
 
     public Expendedor(int numProductos, int precio) {
         this.precio = precio;
-        numBebidas = numProductos;
-        numDulces = numProductos;
         coca = new Deposito<>();
         sprite = new Deposito<>();
         fanta = new Deposito<>();
@@ -52,40 +50,29 @@ public class Expendedor {
             for (int i = 0; i < m.getValor() - precio; i += 100) {
                 AgregaMoneda();
             }
-
-        }
-        /*else if (queProducto == Productos.COCA.getOpcion() && (coca.sizeCosas() > 0)) {
-            for (int i = 0; i < m.getValor() - precio; i += 100) {
-                Moneda a = new Moneda100();
-                monVu.addCosas(a);
-            }
             return coca.getCosas();
-        }*/
+        }
         else if (queProducto == Productos.SPRITE.getOpcion() && (sprite.sizeCosas() > 0)) {
             for (int i = 0; i < m.getValor() - precio; i += 100) {
-                Moneda a = new Moneda100();
-                monVu.addCosas(a);
+                AgregaMoneda();
             }
             return sprite.getCosas();
         }
         else if (queProducto == Productos.FANTA.getOpcion() && (fanta.sizeCosas() > 0)) {
             for (int i = 0; i < m.getValor() - precio; i += 100) {
-                Moneda a = new Moneda100();
-                monVu.addCosas(a);
+                AgregaMoneda();
             }
             return fanta.getCosas();
         }
         else if (queProducto == Productos.SNICKERS.getOpcion() && (snickers.sizeCosas() > 0)) {
             for (int i = 0; i < m.getValor() - precio; i += 100) {
-                Moneda a = new Moneda100();
-                monVu.addCosas(a);
+                AgregaMoneda();
             }
             return snickers.getCosas();
         }
         else if (queProducto == Productos.SUPER8.getOpcion() && (super8.sizeCosas() > 0)) {
             for (int i = 0; i < m.getValor() - precio; i += 100) {
-                Moneda a = new Moneda100();
-                monVu.addCosas(a);
+                AgregaMoneda();
             }
             return super8.getCosas();
         }
@@ -93,38 +80,6 @@ public class Expendedor {
             throw new NoHayProductoException("Error. Producto no disponible");
         }
     }
-
-   /* public Bebida comprarBebida(Moneda m, int cual) {
-        if (m == null) {
-            return null;
-        } else if (m.getValor() < precio) {
-            for (int i = 0; i < m.getValor(); i += 100) {
-                Moneda a = new Moneda100();
-                monVu.addCosas(a);
-            }
-            return null;
-        } else if (cual == COCA && numcoca > 0) {
-            numcoca -= 1;
-            for (int i = 0; i < m.getValor() - precio; i += 100) {
-                Moneda a = new Moneda100();
-                monVu.addCosas(a);
-            }
-            return coca.getCosas();
-        } else if (cual == SPRITE && numsprite > 0) {
-            numsprite -= 1;
-            for (int i = 0; i < m.getValor() - precio; i += 100) {
-                Moneda a = new Moneda100();
-                monVu.getCosas();
-            }
-            return sprite.getCosas();
-        } else {
-            for (int i = 0; i < m.getValor(); i += 100) {
-                Moneda a = new Moneda100();
-                monVu.getCosas();
-            }
-            return null;
-        }
-    }*/
     public Moneda getVuelto() {
         return monVu.getCosas();
     }
