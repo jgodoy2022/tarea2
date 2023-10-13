@@ -1,6 +1,6 @@
 package org.example;
 
-public abstract class Producto {
+public class Producto {
     public Producto() {
         Producto producto = null;
     }

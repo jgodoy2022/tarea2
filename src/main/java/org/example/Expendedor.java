@@ -11,6 +11,11 @@ public class Expendedor {
     private int numBebidas;
     private int numDulces;
 
+    public void AgregaMoneda(){
+        Moneda a = new Moneda100();
+        monVu.addCosas(a);
+    }
+
     public Expendedor(int numProductos, int precio) {
         this.precio = precio;
         numBebidas = numProductos;
@@ -43,19 +48,46 @@ public class Expendedor {
         else if(m.getValor() < precio){
             throw new PagoInsuficienteException("Error. Pago insuficiente");
         }
-        else if (queProducto == Productos.COCA.getOpcion() && (coca.sizeCosas() > 0)) {
+        else if(queProducto == Productos.COCA.getOpcion() && (coca.sizeCosas() > 0)){
             for (int i = 0; i < m.getValor() - precio; i += 100) {
-                Moneda a = new Moneda100();
-                monVu.addCosas(a);
+                AgregaMoneda();
             }
-            return coca.getCosas();
+
         }
-        else if (queProducto == Productos.SPRITE.getOpcion() && (coca.sizeCosas() > 0)) {
+        /*else if (queProducto == Productos.COCA.getOpcion() && (coca.sizeCosas() > 0)) {
             for (int i = 0; i < m.getValor() - precio; i += 100) {
                 Moneda a = new Moneda100();
                 monVu.addCosas(a);
             }
             return coca.getCosas();
+        }*/
+        else if (queProducto == Productos.SPRITE.getOpcion() && (sprite.sizeCosas() > 0)) {
+            for (int i = 0; i < m.getValor() - precio; i += 100) {
+                Moneda a = new Moneda100();
+                monVu.addCosas(a);
+            }
+            return sprite.getCosas();
+        }
+        else if (queProducto == Productos.FANTA.getOpcion() && (fanta.sizeCosas() > 0)) {
+            for (int i = 0; i < m.getValor() - precio; i += 100) {
+                Moneda a = new Moneda100();
+                monVu.addCosas(a);
+            }
+            return fanta.getCosas();
+        }
+        else if (queProducto == Productos.SNICKERS.getOpcion() && (snickers.sizeCosas() > 0)) {
+            for (int i = 0; i < m.getValor() - precio; i += 100) {
+                Moneda a = new Moneda100();
+                monVu.addCosas(a);
+            }
+            return snickers.getCosas();
+        }
+        else if (queProducto == Productos.SUPER8.getOpcion() && (super8.sizeCosas() > 0)) {
+            for (int i = 0; i < m.getValor() - precio; i += 100) {
+                Moneda a = new Moneda100();
+                monVu.addCosas(a);
+            }
+            return super8.getCosas();
         }
         else {
             throw new NoHayProductoException("Error. Producto no disponible");

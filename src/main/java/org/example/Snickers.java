@@ -4,7 +4,7 @@ public class Snickers extends Dulce {
     public Snickers(int c){
         super(c);
     }
-    public String beber(){
+    public String sabor(){
         return "snickers";
     }
 }

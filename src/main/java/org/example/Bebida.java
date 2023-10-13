@@ -5,7 +5,7 @@ public abstract class Bebida extends Producto{
     public Bebida(int a){
         this.serie = a;
     }
-    public abstract String beber();
+    public abstract String sabor();
     public int getSerie(){
         return this.serie;
     }

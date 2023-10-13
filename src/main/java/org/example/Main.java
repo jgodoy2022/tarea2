@@ -2,7 +2,7 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-        Expendedor exp = new Expendedor(3,1000,500);
+        Expendedor exp = new Expendedor(3,1000);
         Moneda m = null;
         Comprador c=null;
         m = new Moneda500();
