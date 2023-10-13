@@ -20,5 +20,8 @@ public class Producto {
     public Producto() {
         Producto producto = null;
     }
+<<<<<<< HEAD
     }
+=======
+>>>>>>> 2e0d16cd4f3faf4afd86b7fa63fa8182ecf51738
 }
