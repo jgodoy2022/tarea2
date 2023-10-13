@@ -4,9 +4,9 @@ public class Comprador {
     private String sonido;
     private int vuelto;
 
-    public Comprador(Moneda m, int cualBebida, Expendedor exp) {
+    public Comprador(Moneda m, int cualProducto, Expendedor exp) {
         //Bebida b = exp.comprarBebida(m,cualBebida);
-        Producto b = exp.comprarProducto(m, cualBebida);
+        Producto b = exp.comprarProducto(m, cualProducto);
         int aux = 0;
         while(exp.getVuelto() != null){
             aux += 100;
