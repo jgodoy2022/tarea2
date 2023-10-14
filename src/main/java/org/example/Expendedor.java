@@ -7,23 +7,13 @@ public class Expendedor {
     private Deposito<Moneda> monVu;
     private Deposito<Dulce> snickers;
     private Deposito<Dulce> super8;
-<<<<<<< HEAD
-    private int precio;
-    private int numBebidas;
-    private int numDulces;
 
-    public void AgregaMoneda(int valorBebida, int dinero){
+    public void AgregaMoneda(int valorBebida, int dinero) {
         for (int i = 0; i < valorBebida - dinero; i += 100) {
             Moneda a = new Moneda100();
             monVu.addCosas(a);
         }
-=======
-    public void AgregaMoneda(){
-        Moneda a = new Moneda100();
-        monVu.addCosas(a);
->>>>>>> rama_joaquin
     }
-
     public Expendedor(int numProductos) {
         coca = new Deposito<>();
         sprite = new Deposito<>();
@@ -45,7 +35,6 @@ public class Expendedor {
 
         }
     }
-
     public Producto comprarProducto(Moneda m,int queProducto) throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
         if(m == null){
             throw new PagoIncorrectoException("Error. Pago inválido");
@@ -55,53 +44,23 @@ public class Expendedor {
             throw new PagoInsuficienteException("Error. Pago insuficiente");
         }
         else if(queProducto == TipoProducto.COCA.getOpcion() && (coca.sizeCosas() > 0)){
-<<<<<<< HEAD
-            AgregaMoneda(m.getValor(), precio);
+            AgregaMoneda(m.getValor(), TipoProducto.values()[queProducto - 1].getValor());
             return coca.getCosas();
         }
         else if (queProducto == TipoProducto.SPRITE.getOpcion() && (sprite.sizeCosas() > 0)) {
-            AgregaMoneda(m.getValor(), precio);
+            AgregaMoneda(m.getValor(), TipoProducto.values()[queProducto - 1].getValor());
             return sprite.getCosas();
         }
         else if (queProducto == TipoProducto.FANTA.getOpcion() && (fanta.sizeCosas() > 0)) {
-            AgregaMoneda(m.getValor(), precio);
+            AgregaMoneda(m.getValor(), TipoProducto.values()[queProducto - 1].getValor());
             return fanta.getCosas();
         }
         else if (queProducto == TipoProducto.SNICKERS.getOpcion() && (snickers.sizeCosas() > 0)) {
-            AgregaMoneda(m.getValor(), precio);
+            AgregaMoneda(m.getValor(), TipoProducto.values()[queProducto - 1].getValor());
             return snickers.getCosas();
         }
         else if (queProducto == TipoProducto.SUPER8.getOpcion() && (super8.sizeCosas() > 0)) {
-            AgregaMoneda(m.getValor(), precio);
-=======
-            for (int i = 0; i < m.getValor() - TipoProducto.values()[queProducto - 1].getValor(); i += 100) {
-                AgregaMoneda();
-            }
-            return coca.getCosas();
-        }
-        else if (queProducto == TipoProducto.SPRITE.getOpcion() && (sprite.sizeCosas() > 0)) {
-            for (int i = 0; i < m.getValor() - TipoProducto.values()[queProducto - 1].getValor(); i += 100) {
-                AgregaMoneda();
-            }
-            return sprite.getCosas();
-        }
-        else if (queProducto == TipoProducto.FANTA.getOpcion() && (fanta.sizeCosas() > 0)) {
-            for (int i = 0; i < m.getValor() - TipoProducto.values()[queProducto - 1].getValor(); i += 100) {
-                AgregaMoneda();
-            }
-            return fanta.getCosas();
-        }
-        else if (queProducto == TipoProducto.SNICKERS.getOpcion() && (snickers.sizeCosas() > 0)) {
-            for (int i = 0; i < m.getValor() - TipoProducto.values()[queProducto - 1].getValor(); i += 100) {
-                AgregaMoneda();
-            }
-            return snickers.getCosas();
-        }
-        else if (queProducto == TipoProducto.SUPER8.getOpcion() && (super8.sizeCosas() > 0)) {
-            for (int i = 0; i < m.getValor() - TipoProducto.values()[queProducto - 1].getValor(); i += 100) {
-                AgregaMoneda();
-            }
->>>>>>> rama_joaquin
+            AgregaMoneda(m.getValor(), TipoProducto.values()[queProducto - 1].getValor());
             return super8.getCosas();
         }
         else {
