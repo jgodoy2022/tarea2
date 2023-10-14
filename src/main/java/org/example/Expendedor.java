@@ -10,7 +10,6 @@ public class Expendedor {
     private int precio;
     private int numBebidas;
     private int numDulces;
-
     public void AgregaMoneda(int valorBebida, int dinero){
         for (int i = 0; i < valorBebida - dinero; i += 100) {
             Moneda a = new Moneda100();
