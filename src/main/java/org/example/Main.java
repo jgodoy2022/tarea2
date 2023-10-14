@@ -2,7 +2,7 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-        Expendedor exp = new Expendedor(3,1000);
+        Expendedor exp = new Expendedor(3);
         Moneda m = null;
         Comprador c=null;
         try{
@@ -44,10 +44,10 @@ public class Main {
             c = new Comprador(m,TipoProducto.COCA.getOpcion(), exp);
             System.out.println(c.queBebiste()+", "+c.cuantoVuelto());
             m = new Moneda1000();
-            c = new Comprador(m,TipoProducto.COCA.getOpcion(), exp);
+            c = new Comprador(m,TipoProducto.SNICKERS.getOpcion(), exp);
             System.out.println(c.queBebiste()+", "+c.cuantoVuelto());
             m = new Moneda1000();
-            c = new Comprador(m,TipoProducto.COCA.getOpcion(),exp);
+            c = new Comprador(m,TipoProducto.SUPER8.getOpcion(),exp);
             System.out.println(c.queBebiste()+", "+c.cuantoVuelto());
         }catch (PagoIncorrectoException e){
             System.out.println(e.getMessage());
