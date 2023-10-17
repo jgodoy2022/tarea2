@@ -14,6 +14,7 @@ public class Expendedor {
             monVu.addCosas(a);
         }
     }
+
     public Expendedor(int numProductos) {
         coca = new Deposito<>();
         sprite = new Deposito<>();
