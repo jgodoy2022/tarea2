@@ -4,8 +4,8 @@ public enum TipoProducto {
     COCA(1,1000),
     SPRITE(2,1000) ,
     FANTA(3,1000),
-    SNICKERS(4,500),
-    SUPER8(5,500);
+    SNICKERS(4,600),
+    SUPER8(5,300);
 
 
     private final int opcion;

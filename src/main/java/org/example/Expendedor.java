@@ -8,8 +8,8 @@ public class Expendedor {
     private Deposito<Dulce> snickers;
     private Deposito<Dulce> super8;
 
-    public void AgregaMoneda(int valorBebida, int dinero) {
-        for (int i = 0; i < valorBebida - dinero; i += 100) {
+    public void AgregaMoneda(int valorMoneda, int precioProducto) {
+        for (int i = 0; i < Math.abs(valorMoneda - precioProducto); i += 100) {
             Moneda a = new Moneda100();
             monVu.addCosas(a);
         }
