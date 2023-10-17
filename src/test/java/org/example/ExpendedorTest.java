@@ -17,19 +17,11 @@ class ExpendedorTest {
     }
 
     @Test
-    void comprarProducto() {
+    void comprarProducto() throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
         Expendedor exp = new Expendedor(1);
         Moneda m = new Moneda100();
-        try{
-            Producto pro =exp.comprarProducto(m,TipoProducto.COCA.getOpcion());
-            assertTrue(pro instanceof CocaCola);
-        } catch (PagoIncorrectoException e){
-            System.out.println(e.getMessage());
-        } catch (PagoInsuficienteException e){
-            System.out.println(e.getMessage());
-        } catch (NoHayProductoException e){
-            System.out.println(e.getMessage());
-        }
+        Producto pro =exp.comprarProducto(m,TipoProducto.COCA.getOpcion());
+        assertTrue(pro instanceof CocaCola);
     }
 
     @Test
