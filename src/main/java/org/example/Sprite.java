@@ -22,4 +22,11 @@ public class Sprite extends Bebida{
     public String sabor(){
         return "sprite";
     }
+
+    /** método que muestra un descripción de la clase
+     * @return cadena de caderes que hace referencia al número de serie de Sprite*/
+    @Override
+    public String toString() {
+        return "Sprite" + super.toString();
+    }
 }

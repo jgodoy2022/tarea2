@@ -20,4 +20,5 @@ abstract public class Producto {
      * @return una cadena de caracteres que representa el sabor del producto
      */
     public abstract String sabor();
+
 }

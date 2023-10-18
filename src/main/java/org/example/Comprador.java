@@ -54,4 +54,11 @@ public class Comprador {
     public String queCompraste(){
         return sonido;
     }
+
+    /** método que muestra un descripción de la clase
+     * @return cadena de caderes que hace referencia al producto pedido, su sonido y el vuelto*/
+    @Override
+    public String toString() {
+        return "Su compra fue: " +sonido+ ",y su vuelto=" + vuelto;
+    }
 }

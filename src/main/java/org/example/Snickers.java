@@ -22,4 +22,11 @@ public class Snickers extends Dulce {
     public String sabor(){
         return "snickers";
     }
+
+    /** método que muestra un descripción de la clase
+     * @return cadena de caderes que hace referencia al número de serie de Snickers*/
+    @Override
+    public String toString() {
+        return "Snickers" + super.toString();
+    }
 }

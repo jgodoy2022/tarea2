@@ -111,4 +111,11 @@ public class Expendedor {
         return monVu.getCosas();
     }
 
+    /** método que muestra un descripción de la clase
+     * @return cadena de caderes que hace referencia a la cantidad de productos dentro del expendedor*/
+    @Override
+    public String toString() {
+        return "Expendedor: " + "coca=" + coca + ", sprite=" + sprite + ", fanta=" + fanta +
+                ", snickers=" + snickers + ", super8=" + super8;
+    }
 }

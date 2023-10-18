@@ -22,4 +22,11 @@ public class Fanta extends Bebida{
     public String sabor(){
         return "fanta";
     }
+
+    /** método que muestra un descripción de la clase
+     * @return cadena de caderes que hace referencia al número de serie de Fanta*/
+    @Override
+    public String toString() {
+        return "Fanta" + super.toString();
+    }
 }

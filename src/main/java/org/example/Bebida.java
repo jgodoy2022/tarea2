@@ -26,4 +26,11 @@ abstract public class Bebida extends Producto{
     public int getSerie(){
         return this.serie;
     }
+
+    /** método que muestra un descripción de la clase
+     * @return cadena de caderes que hace referencia al número de serie del dulce*/
+    @Override
+    public String toString() {
+        return "serie= " + serie;
+    }
 }

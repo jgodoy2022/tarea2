@@ -22,4 +22,11 @@ public class CocaCola extends Bebida{
     public String sabor(){
         return "cocacola";
     }
+
+    /** método que muestra un descripción de la clase
+     * @return cadena de caderes que hace referencia al número de serie de CocaCola*/
+    @Override
+    public String toString() {
+        return "CocaCola" + super.toString();
+    }
 }

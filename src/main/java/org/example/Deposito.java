@@ -48,4 +48,5 @@ public class Deposito<T> {
     public int sizeCosas(){
         return Cosas.size();
     }
+
 }

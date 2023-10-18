@@ -22,4 +22,11 @@ public class Super8 extends Dulce{
     public String sabor(){
         return "super8";
     }
+
+    /** método que muestra un descripción de la clase
+     * @return cadena de caderes que hace referencia al número de serie de Super8*/
+    @Override
+    public String toString() {
+        return "Super8" + super.toString();
+    }
 }
