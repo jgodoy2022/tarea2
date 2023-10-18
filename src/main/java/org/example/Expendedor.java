@@ -1,20 +1,44 @@
 package org.example;
 
+/**
+ * La clase expendedor representa a un expendedor que vende Bebidas y dulces, permite a los clientes
+ * comprar distintos productos ademas de retirar las monedas del vuelto
+ * @author Gabriela Isidora Zambrano Novoa
+ * @author Joaquin Alejandro Godoy Vergara
+ * */
 public class Expendedor {
+    /** Deposito que almacena Bebidas coca*/
     private Deposito<Bebida> coca;
+
+    /** Deposito que almacena Bebidas sprite*/
     private Deposito<Bebida> sprite;
+
+    /** Deposito que almacena Bebidas fanta*/
     private Deposito<Bebida> fanta;
+
+    /** Deposito que almacena Mondedas para el vuelto*/
     private Deposito<Moneda> monVu;
+
+    /** Deposito que almacena Dulces snickers*/
     private Deposito<Dulce> snickers;
+
+    /** Deposito que almacena Dulces super8*/
     private Deposito<Dulce> super8;
 
+    /**
+     * Agrega monedas al deposito de Monedas para el vuelto de la compra
+     * @param valorMoneda valor de la moneda con la que se paga
+     *  @param precioProducto precio del producto a comprar
+     */
     public void AgregaMoneda(int valorMoneda, int precioProducto) {
         for (int i = 0; i < Math.abs(valorMoneda - precioProducto); i += 100) {
             Moneda a = new Moneda100();
             monVu.addCosas(a);
         }
     }
-
+    /** Constructor recibe un unico parametro para llenar con esa cantidad los depositos de productos
+     * @param numProductos numero de productos disponibles en el expendedor
+     */
     public Expendedor(int numProductos) {
         coca = new Deposito<>();
         sprite = new Deposito<>();
@@ -36,6 +60,16 @@ public class Expendedor {
 
         }
     }
+
+    /**
+     * Permite al cliente comprar un producto ingresando una moneda y la opcion del producto deseado
+     * @param m moneda utilizada en la compra
+     * @param queProducto representa el la opcion del producto deseado
+     * @return producto comprado por el cliente
+     * @throws NoHayProductoException si el producto no esta disponible o no existe
+     * @throws PagoInsuficienteException si el pago es insuficiente y no da para comprar el producto
+     * @throws PagoIncorrectoException si el pago es invalido
+     */
     public Producto comprarProducto(Moneda m,int queProducto) throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
         if(m == null){
             throw new PagoIncorrectoException("Error. Pago inválido");
@@ -68,6 +102,11 @@ public class Expendedor {
             throw new NoHayProductoException("Error. Producto no disponible");
         }
     }
+
+    /**
+     * Permite obtener el vuelto una a una
+     * @return vuelto en forma de monedas
+     */
     public Moneda getVuelto() {
         return monVu.getCosas();
     }
